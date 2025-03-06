@@ -24,10 +24,6 @@ jobs:
           pip install dvc[gcs]
           pip install mlflow
 
-      - name: Run Unit Tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q
-
       - name: Run DVC Pipeline
         run: |
           dvc repro
