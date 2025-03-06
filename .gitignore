@@ -89,3 +89,5 @@ target/
 .mypy_cache/
 
 .composite-age-451413-t4-17b0755a59ef.json
+.environment.yaml
+.env
