@@ -1,0 +1,5 @@
+[core]
+    remote = gcsremote
+['remote "gcsremote"']
+    url = gs://imdb-bucket-test/dvc-remote
+    credentialpath = ../composite-age-451413-t4-17b0755a59ef.json
