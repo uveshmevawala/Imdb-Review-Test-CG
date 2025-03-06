@@ -1,0 +1,24 @@
+# config.yaml
+data:
+  csv_filename: "imdb_reviews.csv"
+  text_column: "review"
+  label_column: "label"
+
+preprocessing:
+  lowercase: true
+  remove_punctuation: true
+
+feature_engineering:
+  tfidf_max_features: 500
+
+model:
+  test_size: 0.2
+  random_state: 42
+  classifier: "logistic_regression"  # could be logistic_regression, svm, etc.
+  hyperparameters:
+    C: 1.0
+    max_iter: 100
+
+serving:
+  host: "0.0.0.0"
+  port: 8080
