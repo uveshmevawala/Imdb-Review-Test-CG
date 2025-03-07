@@ -23,6 +23,15 @@ jobs:
           pip install -r requirements.txt
           pip install dvc[gcs]
           pip install mlflow
+          
+      - name: Authenticate with Google Cloud
+        env:
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        run: |
+          echo "$GCP_SERVICE_ACCOUNT_KEY" > gcp-key.json
+          gcloud auth activate-service-account --key-file=gcp-key.json
+          gcloud config set project YOUR_PROJECT_ID
+          gcloud auth application-default login --brief --key-file=gcp-key.json
 
       - name: Run DVC Pipeline
         run: |
